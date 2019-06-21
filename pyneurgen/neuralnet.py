@@ -411,9 +411,9 @@ class NeuralNet(object):
 
         """
 
-        for i in xrange(start_position, end_position):
+        for i in xrange(start_position, end_position): // Use range instead of xrange in Python 03
             order = [[random(), i]
-                for i in xrange(start_position, end_position)]
+                for i in xrange(start_position, end_position)] // Use range instead of xrange in Python 03
 
         order.sort()
         for item in order:
@@ -850,6 +850,7 @@ class NeuralNet(object):
         """
 
         config = ConfigParser.ConfigParser()
+        //config = configparser.ConfigParser() for Python 03
         config.readfp(open(filename))
 
         hidden_neurons = config.get('net', 'hidden_neurons').split(",")
